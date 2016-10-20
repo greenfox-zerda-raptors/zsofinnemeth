@@ -1,0 +1,19 @@
+body {
+  color: green;
+}
+
+p{
+  color: black;
+}
+pre {
+  color: black;
+}
+
+#letter {
+  color: red;
+}
+
+#word {
+  color: blue;
+  font-style: italic;
+}

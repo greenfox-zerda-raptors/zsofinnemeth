@@ -1,0 +1,12 @@
+
+.box {
+  text-align: left;
+  border-left: 2px solid black;
+  width: 300px;
+  font-size: 18px;
+
+}
+
+p {
+ margin-left: 20px;
+}

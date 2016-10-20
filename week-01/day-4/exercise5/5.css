@@ -1,0 +1,34 @@
+body {
+  color: black;
+}
+
+h1 {
+  color: blue;
+}
+
+h2 {
+  color: orange;
+}
+
+p {
+  color: black;
+}
+
+.cat {
+  color: blue;
+  list-style-type: square;
+}
+
+.subcat {
+  color: black;
+  list-style-type: disc;
+}
+
+.ordered {
+  color: black;
+}
+
+.subsub{
+  color: red;
+  text-align: left;
+}

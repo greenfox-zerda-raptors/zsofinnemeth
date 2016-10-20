@@ -1,0 +1,39 @@
+
+.els {
+  text-align: left;
+  border-style: solid;
+  padding: 40px;
+  width: 200px;
+  font-size: 18px;
+  margin-left: 20px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url("https://github.com/greenfox-academy/teaching-materials/raw/master/tools-and-coding/html-css/duck.png");
+  background-position: left;
+}
+
+.mas {
+  text-align: left;
+  border-style: solid;
+  padding: 40px;
+  width: 200px;
+  font-size: 18px;
+  margin-left: 20px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url("https://github.com/greenfox-academy/teaching-materials/raw/master/tools-and-coding/html-css/duck.png");
+  background-position: center;
+}
+
+.har {
+  text-align: left;
+  border-style: solid;
+  padding: 40px;
+  width: 200px;
+  font-size: 18px;
+  margin-left: 20px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url("https://github.com/greenfox-academy/teaching-materials/raw/master/tools-and-coding/html-css/duck.png");
+  background-position: right bottom;
+}

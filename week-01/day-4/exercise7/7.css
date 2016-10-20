@@ -1,0 +1,21 @@
+
+p {
+  text-align: left;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  padding: 20px;
+  width: 340px;
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+p:hover {
+  background-color: green;
+}
+
+#bottom {
+  border-bottom-style: hidden;
+
+}
