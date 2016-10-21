@@ -1,0 +1,90 @@
+
+
+#header {
+
+ height:650px;
+ width: auto;
+ margin-left: auto;
+ margin-right: auto;
+ background: url(nyomi.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+ text-align: left;
+ font-size: 60px;
+ font-family: proxima-nova,'Source Sans Pro',sans-serif;
+ font-weight: bolder;
+ text-indent: 50px;
+ border-style: solid;
+ border-width: 20px;
+ border-color: #228B22;
+ color: black;
+ opacity: 0.8;
+   }
+
+
+#name {
+  text-align: left;
+  font-size: 90px;
+  font-family: proxima-nova,'Source Sans Pro',sans-serif;
+  font-weight: bolder;
+  color: black;
+
+}
+
+.els {
+  background-color: #228B22;
+  font-family: 'Source Sans Pro',sans-serif;
+  text-align:center;
+  font-size: 50px;
+  font-weight: lighter;
+  font-style: italic;
+  margin-right: 20px;
+  margin-left: 20px;
+  color: black;
+}
+
+.info {
+  border-style: solid;
+  padding: 40px;
+  width: 400px;
+  font-size: 25px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F0E68C;
+  opacity: 0.8;
+}
+
+body {
+  font-family: proxima-nova,'Source Sans Pro',sans-serif;
+  font-size: 20px;
+  margin-right: 100px;
+  width: 100%;
+  background-color: #FFD700;
+  color: #696969;
+}
+
+
+h2, ul, li {
+  text-align: center;
+  list-style-type: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2{
+  color: #4B0082;
+  font-weight: bold;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#torzs {
+  border-style: solid;
+  text-align: center;
+  background-color: #F0E68C;
+  margin-left: 400px;
+  margin-right: 400px;
+  opacity: 0.8;
+}

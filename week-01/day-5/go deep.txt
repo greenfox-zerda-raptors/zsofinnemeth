@@ -1,0 +1,27 @@
+html 
+<hr> horizontal line
+<br> break tag
+
+css
+
+commenting: /* comment */
+set a block of code to comment: ctrl /  (??)
+
+child selectors
+adjacent selectors
+attribute selectors
+pseudo selectors: they behave like one
+hover, active, visites ---> effects
+first & last child selectors - 
+first & last of type selectors: 
+Child Selectors:
+Adjacent Selectors:
+Attribute Selectors:	
+Pseudo Selectors:
+Hover, Active & Visited Effects:
+First & Last Child Selectors:	
+First & Last of Type Selectors:
+nth Child Selectors: 
+nth of Type Selectors:
+Combining Selectors: 
+universal selector: * asterisk (mindent kiválaszt)
