@@ -1,0 +1,61 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  min-width: 400px;
+
+}
+
+.flex-container {
+  display: flex;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+header {
+  background-color: aqua;
+  width: 100%;
+  height: 100px;
+}
+
+
+.maincontent {
+  flex-grow: 1;
+  height: 450px;
+  background-color: red;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  border-left: 20px solid white;
+  border-right: 20px solid white;
+}
+
+.littlebox {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.rightsidebar {
+  float: right;
+  width: 200px;
+  height: 450px;
+  background-color: purple;
+
+}
+
+.leftsidebar {
+  float: left;
+  width: 200px;
+  height: 450px;
+  background-color: orange;
+}
+
+
+footer {
+  background-color: blue;
+  width: 100%;
+  height: 100px;
+}
