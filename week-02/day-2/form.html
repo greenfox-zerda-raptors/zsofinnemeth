@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Form</title>
+  <link rel="stylesheet" type="text/css" href="form.css">
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <h1>Profil</h1>
+  <form>
+
+    <div id="flex-container">
+
+      <div id="container1">
+
+        <h3>Személyes adatok</h3>
+        <label for="lastname"><h4>Név<span class="star">*</span></h4></label>
+        <input type="text" name="name" id="name">
+
+        <label for="number"><h4>Születési éved</h4></label>
+        <input type="text" name="number" id="number" placeholder="pl. 1984">
+
+        <div class="form-group">
+          <label class="col-md-4 control-label"><h4>Nemed</h4></label>
+          <div class="col-md-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="hosting" value="yes" /> Nő
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="hosting" value="no" /> Férfi
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+        <h4>Milyen márkákat szeretsz?</h4>
+
+        <div class="col-md-4">
+          <input type="checkbox" id="adidas" name="adidas" value="Adidas">
+          <label for="adidas">Adidas</label>
+          <br>
+          <input type="checkbox" id="apple" name="apple" value="Apple">
+          <label for="apple">Apple</label>
+          <br>
+          <input type="checkbox" id="cocacola" name="cocacola" value="Coca-Cola">
+          <label for="cocacola">Coca-Cola</label>
+          <br>
+          <input type="checkbox" id="mazda" name="mazda" value="Mazda">
+          <label for="mazda">Mazda</label>
+          <br>
+          <input type="checkbox" id="nike" name="nike" value="Nike">
+          <label for="nike">Nike</label>
+          <br>
+          <input type="checkbox" id="opel" name="opel" value="Opel">
+          <label for="opel">Opel</label>
+          <br>
+          <input type="checkbox" id="rayban" name="rayban" value="Ray-Ban">
+          <label for="rayban">Ray-Ban</label>
+          <br>
+          <input type="checkbox" id="starbucks" name="starbucks" value="Starbucks">
+          <label for="starbucks">Starbucks</label>
+          <br>
+          <input type="checkbox" id="tesla" name="tesla" value="Tesla">
+          <label for="tesla">Tesla</label>
+          <br>
+          <input type="checkbox" id="yahoo" name=""yahoo" value="Yahoo">
+          <label for="yahoo">Yahoo</label>
+        </div>
+        <p>Többet is választhatsz!</p>
+        <br>
+
+      </div>
+
+      <div id="container2">
+
+        <h3>Kapcsolat</h3>
+        <label for="phone"><h4>Telefonszám <span class="star">*</span></h4></label>
+        <input type="text" id="phone" name="phone" placeholder="+36 - -  - - -  - - - -" required><br>
+
+        <label for="email"><h4>E-mail <span class="star">*</span></h4></label>
+        <input type="text" name="email" id="email" placeholder="name@domain.hu" required><br>
+
+        <label for="facebook"><h4>Facebook profilod</h4></label>
+        <input type="url" id="facebook" name="facebook" placeholder="http://facebook.com/..."><br>
+
+        <label for="twitter"><h4>Twitter profilod</h4></label>
+        <input type="url" id="twitter" name="twitter" placeholder="http://twitter.com/..."><br>
+
+        <h4>Milyen házban laksz?</h4>
+        <select id="haz" name="haz" >
+          <option value="csaladi">Családi ház</option>
+          <option value="tarsas">Társasház</option>
+          <option value="hajlektalan">Fedél nélkül</option>
+        </select>
+        <br>
+
+      </div>
+    </div>
+
+    <h4>Bemutatkozás<span class="star">*</span></h4>
+    <textarea id="comment" name="comment" rows="6" style="font-family: calibri" placeholder="Írj magadról pár mondatot!"></textarea>
+
+    <h4>CV feltöltése</h4>
+    <button class="button1" type="submit" form="form1" value="Submit">FILE KIVÁLASZTÁSA</button>
+    <br>
+    <br>
+    <input type="checkbox" name="terms" value="terms">
+    Elfogadom a <a href="https://www.facebook.com/Geci-ronda-s%C3%BCtik-226852504334323/">felhasználási feltételeket</a>.
+    <br>
+    <br>
+    <button class="button2" type="submit" form="form1" value="Submit">MENTÉS</button>
+
+    <button class="button3" type="submit" form="form1" value="Submit">ŰRLAP TÖRLÉSE</button>
+  </form>
+</body>
+
+</html>
