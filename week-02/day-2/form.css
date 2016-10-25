@@ -21,12 +21,14 @@ form {
 #container1 {
   width: 33%;
   margin-right: 20px;
+
 }
 
 #container2 {
 
   width: 33%;
   margin-left: 20px;
+
 }
 
 h1 {
@@ -40,7 +42,7 @@ h3 {
   background-color: #938C97;
   color: #DCD6CD;
   border-radius: 1px;
-  width: 320px;
+  width: 325px;
   height: auto;
   padding: 5px;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
@@ -67,22 +69,25 @@ p {
 
 textarea {
   width: 70%;
-
+  border-radius: 3px;
 }
 
 input[type="text"] {
   width: 330px;
   height: 20px;
+  border-radius: 3px;
 }
 
 input[type="url"] {
   width: 330px;
   height: 20px;
+  border-radius: 3px;
 }
 
 select {
   width: 335px;
   height: 30px;
+  border-radius: 3px;
 }
 
 .button1 {
