@@ -1,0 +1,71 @@
+#container {
+  width: 800px;
+  height: 580px;
+  background-color: #4396E9;
+  position: absolute;
+}
+
+table {
+  table-layout: auto;
+  border-collapse: collapse;
+  font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+  width: 700px;
+  height: 500px;
+  position: relative;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+
+}
+
+td {
+  width: auto;
+  border: 1px solid RGBa(193, 195, 208, 1.00);
+  font-size: 26px;
+  color: RGBa(102, 107, 132, 1.00);
+  padding: 25px;
+}
+
+th {
+  width: auto;
+  background-color: RGBa(27, 30, 36, 1.00);
+  color: RGBa(212, 220, 228, 1.00);
+  font-size: 40px;
+  font-weight: 100;
+  padding: 25px;
+  border-bottom: 4px solid RGBa(193, 195, 208, 1.00);
+  border-right: 1px solid RGBa(193, 195, 208, 1.00);
+}
+
+th:nth-child(2) {
+  border-top-right-radius: 6px;
+  border-right-style: hidden;
+}
+
+th:nth-child(1) {
+  border-top-left-radius: 6px;
+}
+
+tr:nth-child(odd) {
+  background-color: RGBa(235, 235, 235, 1.00);
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+
+#may {
+  border-bottom-left-radius: 6px;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#money {
+  border-bottom-right-radius: 6px;
+  border-right-style: hidden;
+  border-bottom-style: hidden;
+}

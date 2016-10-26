@@ -1,0 +1,66 @@
+
+#container{
+  width: 33%;
+}
+
+
+.button1 {
+  display: block;
+  position: relative;
+  float: left;
+  width: 120px;
+  height: 20px;
+  padding: 10px;
+  border-radius: 2px;
+  border: 2px solid rgb(212, 212, 212);
+  font-family: sans-serif;
+  text-align: center;
+  color: rgb(134, 134, 134);
+  background: white;
+  background: linear-gradient(180deg, white 0%, rgb(226, 226, 226) 100%);
+ }
+
+ a.button1:hover {
+   text-shadow: 2px 2px 2px pink;
+ }
+
+.button2 {
+  display: block;
+  position: absolute;
+  margin: 150px;
+  margin-top: 0;
+  width: 120px;
+  height: 20px;
+  padding: 10px;
+  border: 2px solid blue;
+  border-radius: 2px;
+  font-family: sans-serif;
+  text-align: center;
+  color: white;
+  background: rgb(30, 180, 224);
+  background: linear-gradient(180deg, rgb(27, 180, 224) 0%, rgb(21, 142, 177) 100%);
+}
+a.button2:hover {
+  background: purple;
+}
+
+.button3 {
+  display: block;
+  position: relative;
+  float: right;
+  width: 120px;
+  height: 20px;
+  padding: 10px;
+  border: 2px solid rgb(91, 129, 21);
+  border-radius: 2px;
+  font-family: sans-serif;
+  text-align: center;
+  color: white;
+  background: rgb(141, 200, 38);
+  background: linear-gradient(180deg, rgb(141, 200, 38) 0%, rgb(108, 155, 27) 100%);
+
+}
+
+a.button3:hover {
+  background: brown;
+}
