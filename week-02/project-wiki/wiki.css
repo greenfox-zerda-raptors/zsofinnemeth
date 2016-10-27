@@ -1,0 +1,45 @@
+body {
+  background-color: white;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+#sidebar {
+  width: 10%;
+  border-right: 1px solid lightblue;
+}
+
+#sidebar hr {
+  color: grey;
+  width: 150px;
+
+}
+
+h1, h2, h3, h4 {
+  font-family: serif;
+}
+
+.contents ul {
+  list-style: none;
+}
+
+ul.list{
+  list-style: disc;
+}
+
+
+.infobox {
+  width: 15%;
+  height: 25%;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.photobox{
+  padding: 5px;
+  border: 1px solid black;
+  float: right;
+  text-align: center;
+  width: 260px;
+}
+}
