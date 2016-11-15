@@ -7,6 +7,7 @@ public class Car {
     private String color;
     private String typeCar;
 
+
     public Car(String typeCar, String color, int sizeEngine, int kmOdometer) {
         this.sizeEngine = sizeEngine;
         this.color = color;
@@ -26,7 +27,11 @@ public class Car {
         this.typeCar = "Mazda";
     }
 
-
+    public Car(String color, String typeCar, int sizeEngine) {
+        this.color = color;
+        this.typeCar = typeCar;
+        this.sizeEngine = sizeEngine;
+    }
 
     public void drive(int clicks) {
         kmOdometer += clicks;
@@ -41,6 +46,10 @@ public class Car {
         }
         System.out.printf("The %s %s odometer now shows %d.\n", color, typeCar, kmOdometer);
 
+    }
+
+    public int countCar(int items) {
+        
     }
 
      public String toString() {
