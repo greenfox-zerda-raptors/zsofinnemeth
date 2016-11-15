@@ -7,9 +7,14 @@ public class Workshop01 {
         bird.fly();
         bird.eat();
         bird.sleep();
-        Animal animal = new Animal();
+        System.out.println(bird.lifeExpectancy);
+        bird.speak();
+        Animal animal = new Animal(15, true);
         animal.eat();
         animal.sleep();
         bird.nightyNight();
-    }
+        Dog dog = new Dog();
+        dog.speak();
+        dog.beg();
+         }
 }
