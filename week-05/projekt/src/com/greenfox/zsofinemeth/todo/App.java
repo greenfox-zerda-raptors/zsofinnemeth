@@ -1,8 +1,5 @@
 package com.greenfox.zsofinemeth.todo;
-
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+import java.util.InputMismatchException;
 
 /**
  * Created by false on 2016. 11. 17..
@@ -10,10 +7,11 @@ import java.util.StringTokenizer;
 public class App {
 
     public static void main(String[] args) {
-
-        ToDoList.displayWelcome();
-
-
+        try {
+            ToDoList.displayWelcome();
+        } catch (InputMismatchException e) {
+            System.out.println("Sorry, invalid value");
+        }
 
     }
 }
