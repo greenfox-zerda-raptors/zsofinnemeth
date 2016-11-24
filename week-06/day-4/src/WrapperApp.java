@@ -37,24 +37,27 @@ public class WrapperApp extends JFrame {
         menuBar = new JMenuBar();
 
         //Build the first menu.
-        menu = new JMenu("A Menu");
-        menu.setMnemonic(KeyEvent.VK_A);
+        menu = new JMenu("Menubar");
+        menu.setMnemonic(KeyEvent.VK_V);
         menu.getAccessibleContext().setAccessibleDescription(
                 "The only menu in this program that has menu items");
         menuBar.add(menu);
 
         //a group of JMenuItems
-        menuItem = new JMenuItem("A text-only menu item",
-        KeyEvent.VK_T);
+
+        menuItem = new JMenuItem(new ImageIcon("507.png"));
+        menuItem.setMnemonic(KeyEvent.VK_S);
+        menu.add(menuItem);
+        menuItem = new JMenuItem("Exit", KeyEvent.VK_S);
+        menuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
         menu.add(menuItem);
 
-        menuItem = new JMenuItem("Here the menu item has duckpic",
-                new ImageIcon("507.png"));
-        menuItem.setMnemonic(KeyEvent.VK_B);
-        menu.add(menuItem);
-        menuItem = new JMenuItem(new ImageIcon("507.png"));
-        menuItem.setMnemonic(KeyEvent.VK_D);
-        menu.add(menuItem);
+        setJMenuBar(menuBar);
 
         this.setJMenuBar(menuBar);
         this.setVisible(true);
