@@ -2,10 +2,7 @@
 import javax.swing.*;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 
 public class EventCounter extends JFrame {
     private JTextField textField;
@@ -32,28 +29,68 @@ public class EventCounter extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setSize(450, 200);
+        addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+                windowEvents++;
+                updateWindowEventCounter();
+            }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                updateWindowEventCounter();
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+                updateWindowEventCounter();
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+                windowEvents++;
+                updateWindowEventCounter();
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+                windowEvents++;
+                updateWindowEventCounter();
+            }
+
+            @Override
+            public void windowActivated(WindowEvent e) {
+                windowEvents++;
+                updateWindowEventCounter();
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+                windowEvents++;
+                updateWindowEventCounter();
+            }
+        });
 
         JPanel panel = new JPanel();
         getContentPane().add(panel);
 
-
 // Event Counter LABELS:
 
-        MouseEventCounterLabel = new JLabel("Mouse event counter");
+        MouseEventCounterLabel = new JLabel("Mouse Event Counter: ");
         panel.add(MouseEventCounterLabel);
         MouseEventCounterLabel.setPreferredSize(
                 new Dimension(200, 30));
         panel.add(MouseEventCounterLabel);
 
 
-        KeyEventCounterLabel = new JLabel("Key event counter");
+        KeyEventCounterLabel = new JLabel("Key Event Counter: ");
         panel.add(KeyEventCounterLabel);
         KeyEventCounterLabel.setPreferredSize(
                 new Dimension(200, 30));
         panel.add(KeyEventCounterLabel);
 
 
-        WindowEventCounterLabel = new JLabel("Window event counter");
+        WindowEventCounterLabel = new JLabel("Window Event Counter: ");
         panel.add(WindowEventCounterLabel);
         WindowEventCounterLabel.setPreferredSize(
                 new Dimension(200, 30));
@@ -63,15 +100,22 @@ public class EventCounter extends JFrame {
         // Textfield
 
         JTextField textField = new JTextField(" ", 15);
-        textField.addKeyListener(new KeyListener() {
+        textField.addKeyListener(new KeyAdapter() {
             @Override
-            public void actionPerformed(KeyEvent e) {
+            public void keyReleased(KeyEvent e) {
                 keyEvents++;
                 updateKeyEventCounter();
             }
         });
+        textField.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                mouseEvents++;
+                updateMouseEventCounter();
+            }
+        });
         textField.setColumns(10);
-        textField.setText("My actual input");
+        textField.setText("");
         textField.setVisible(true);
         panel.add(textField);
 
@@ -80,34 +124,16 @@ public class EventCounter extends JFrame {
 
     }
 
-    // ActionListener methods:
-
-    public class MouseEventCounterActionListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            mouseEvents++;
-            updateMouseEventCounter();
-        }
-    }
-    public class ListenForKeys implements KeyListener {
-        @Override
-        public void actionPerformed(KeyEvent e) {
-            keyEvents++;
-            updateKeyEventCounter();
-        }
-    }
-    public class WindowEventCounterActionListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            windowEvents++;
-            updateMouseEventCounter();
-        }
-    }
-
-
        // Updating Counters:
+
     private void updateKeyEventCounter() {
-        KeyEventCounterLabel.setText("Pressed" + keyEvents);
+        KeyEventCounterLabel.setText("Key Event Counter: " + keyEvents);
+    }
+    private void updateMouseEventCounter() {
+        MouseEventCounterLabel.setText("Mouse Event Counter: " + mouseEvents);
+    }
+    private void updateWindowEventCounter() {
+        WindowEventCounterLabel.setText("Window Event Counter: " + windowEvents);
     }
 
 
