@@ -2,9 +2,8 @@ package com.zsofintodo;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
+import java.util.Scanner;
 
 
 public class ToDoApp extends JFrame {
@@ -12,6 +11,9 @@ public class ToDoApp extends JFrame {
     private JMenu menu;
     private JMenuItem menuItem;
     private JTextArea textArea;
+    private JLabel labelWelcome, LabelMemory, labelInput;
+    JScrollPane scrollPane;
+    private String memory;
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -55,15 +57,36 @@ public class ToDoApp extends JFrame {
         menuItem.getAccessibleContext().setAccessibleDescription(" ");
         menu.add(menuItem);
 
+        // JLabel
+
+        JLabel labelWelcome = new JLabel("");
+        labelWelcome.setText("<html><body><center>Welcome to the place<br>where you can feel really busy<br>Please enter what-to-do: <br>( ͡° ᴥ ͡°)</center></body></html>");
+        panel.add(labelWelcome);
+
+
+        //Textfield for input
+
+        JTextField textField = new JTextField(" ", 20);
+        textField.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+             //   labelMemory.setText("Memory: " + memory);
+                memory = textField.getText();
+            }
+        });
+
+        panel.add(textField);
+
         // Textarea to list the to-dos
 
-        JTextArea textArea = new JTextArea(10,40);
+        JTextArea textArea = new JTextArea(10, 40);
         JScrollPane scrollPane = new JScrollPane(textArea);
         textArea.setFont(new Font("Sans Serif", Font.BOLD, 12));
+        textArea.setText(textField.getText());
         panel.add(textArea);
 
 
-
-        this.setJMenuBar(menuBar);
+        setJMenuBar(menuBar);
     }
+
 }
