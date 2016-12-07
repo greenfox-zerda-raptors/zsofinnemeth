@@ -5,16 +5,26 @@ package com.greenfox.zsofi;
  */
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 /**
  * Created by aze on 2016.12.05..
  */
-public class Board extends JComponent {
+public class Board extends JComponent implements KeyListener{
 
     ArrayList<GameObject> gameObjects;
 
+    public Hero getHero() {
+        return hero;
+    }
+
+    private Hero hero;
+
     public Board() {
+
+
         boolean[][] map = new boolean[][] {
                 {false, false, false, false, true, true, true, false, false},
                 {true, false, false, false, true, true, false, false, true},
@@ -25,7 +35,7 @@ public class Board extends JComponent {
                 {false, false, true, true, false, true, false, false, true},
                 {false, false, true, true, false, true, false, false, false}
         };
-        gameObjects = new ArrayList<GameObject>();
+        gameObjects = new ArrayList<>();
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[i].length; j++) {
                 if (map[i][j]) {
@@ -35,9 +45,14 @@ public class Board extends JComponent {
                 }
             }
         }
+        hero = new Hero("hero-down.png", 0,0);
+        gameObjects.add(hero);
+        addKeyListener(this);
+
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 720));
         setVisible(true);
+        setFocusable(true);
     }
 
     @Override
@@ -48,5 +63,35 @@ public class Board extends JComponent {
         for (GameObject gameObject : gameObjects) {
             gameObject.draw(graphics);
         }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode()==KeyEvent.VK_RIGHT) {
+            hero.moveRight();
+            repaint();
+        }
+        if (e.getKeyCode()==KeyEvent.VK_LEFT) {
+            hero.moveLeft();
+            repaint();
+        }
+        if (e.getKeyCode()==KeyEvent.VK_UP) {
+            hero.moveUp();
+            repaint();
+        }
+        if (e.getKeyCode()==KeyEvent.VK_DOWN) {
+            hero.moveDown();
+            repaint();
+        }
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }
