@@ -9,9 +9,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
-/**
- * Created by aze on 2016.12.05..
- */
 public class Board extends JComponent implements KeyListener{
 
     ArrayList<GameObject> gameObjects;
@@ -21,6 +18,7 @@ public class Board extends JComponent implements KeyListener{
     }
 
     private Hero hero;
+
 
     public Board() {
 
@@ -47,6 +45,14 @@ public class Board extends JComponent implements KeyListener{
         }
         hero = new Hero("hero-down.png", 0,0);
         gameObjects.add(hero);
+        Skeleton skeletonOne = new Skeleton("skeleton.png", 5, 5);
+        gameObjects.add(skeletonOne);
+        Skeleton skeletonTwo = new Skeleton("skeleton.png", 3, 7);
+        gameObjects.add(skeletonTwo);
+        Skeleton skeletonThree = new Skeleton("skeleton.png", 1, 3);
+        gameObjects.add(skeletonThree);
+        Boss boss = new Boss("boss.png", 7, 0);
+        gameObjects.add(boss);
         addKeyListener(this);
 
         // set the size of your draw board

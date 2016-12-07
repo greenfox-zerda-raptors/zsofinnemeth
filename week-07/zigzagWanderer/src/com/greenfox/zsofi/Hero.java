@@ -1,8 +1,5 @@
 package com.greenfox.zsofi;
 
-/**
- * Created by false on 2016. 12. 07..
- */
 public class Hero extends GameCharacter {
     private String filename;
 
@@ -16,17 +13,33 @@ public class Hero extends GameCharacter {
 
     public void moveRight() {
         this.posX = posX+1;
-        this.filename = "hero-right.png";
     }
     public void moveLeft() {
         this.posX = posX-1;
-        this.filename = "hero-left.png";
     }
     public void moveUp() {
         this.posY = posY-1;
-        this.filename = "hero-up.png";
     }
     public void moveDown() {
         this.posY = posY+1;
     }
+
+    public void faceDirection(int i) {
+        switch (i) {
+            case 1: // move right
+                this.filename = "hero-right.png";
+                // this.setImage;
+                break;
+            case 2: // move left
+                this.filename = "hero-left.png";
+                break;
+            case 3: // move up
+                this.filename = "hero-left.png";
+                break;
+            case 4:
+                this.filename = "hero-down.png";
+                break;
+        }
+    }
+
 }
