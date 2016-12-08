@@ -1,34 +1,48 @@
 package com.greenfox.zsofi;
 
+import java.util.Map;
+
 public class Hero extends GameCharacter {
     private String filename;
+    private boolean[][] map;
+    private Tile tile;
 
-    public Hero(String filename, int posX, int posY) {
+
+    public Hero(String filename, int posX, int posY, boolean[][] map) {
         super(filename, posX, posY);
         this.filename = filename;
         this.posX = posX;
         this.posY = posY;
-
+        this.map = map;
     }
 
     public void moveRight() {
         if (posX < 7) {
-            this.posX = posX + 1;
+            if (!(map[posX + 1][posY])) {
+                this.posX = posX + 1;
+            }
         }
     }
+
     public void moveLeft() {
         if (posX > 0) {
-            this.posX = posX - 1;
+            if (!(map[posX - 1][posY])) {
+                this.posX = posX - 1;
+            }
         }
     }
     public void moveUp() {
         if (posY > 0) {
-            this.posY = posY - 1;
+            if (!(map[posX][posY - 1])) {
+                this.posY = posY - 1;
+            }
         }
     }
     public void moveDown() {
         if (posY < 8) {
-            this.posY = posY + 1;
+            if (!(map[posX][posY + 1])) {
+                this.posY = posY + 1;
+            }
         }
     }
 

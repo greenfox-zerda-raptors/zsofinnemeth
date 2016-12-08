@@ -3,11 +3,16 @@ package com.greenfox.zsofi;
 /**
  * Created by false on 2016. 12. 07..
  */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.awt.BorderLayout;
+import java.util.Map;
+import javax.swing.BorderFactory;
+import javax.swing.border.BevelBorder;
 
 public class Board extends JComponent implements KeyListener{
 
@@ -45,7 +50,7 @@ public class Board extends JComponent implements KeyListener{
             }
         }
 
-        hero = new Hero("hero-down.png", 0,0);
+        hero = new Hero("hero-down.png", 0,0, map);
         gameObjects.add(hero);
         Skeleton skeletonOne = new Skeleton("skeleton.png", 5, 5);
         gameObjects.add(skeletonOne);
@@ -61,6 +66,21 @@ public class Board extends JComponent implements KeyListener{
         setPreferredSize(new Dimension(700, 950));
         setVisible(true);
         setFocusable(true);
+        JPanel gamePanel = new JPanel();
+        gamePanel.setVisible(true);
+        setPreferredSize(new Dimension(950, 650));
+
+        //attempting to set a JPanel with JLabels for the gameCharacter stats - NOT functioning:
+        JLabel heroLabel = new JLabel("Hero HP: \n DP: \n SP: \n");
+        heroLabel.setVisible(true);
+        JLabel skeletonLabel = new JLabel("Skeleton HP: \n DP: \n SP: \n");
+        skeletonLabel.setVisible(true);
+        JLabel bossLabel = new JLabel("Boss HP: \n DP: \n SP: \n");
+        heroLabel.setVisible(true);
+        gamePanel.add(heroLabel);
+        gamePanel.add(skeletonLabel);
+        gamePanel.add(bossLabel);
+
     }
 
     @Override
@@ -107,4 +127,6 @@ public class Board extends JComponent implements KeyListener{
     public void keyReleased(KeyEvent e) {
 
     }
+
+
 }

@@ -11,4 +11,12 @@ public abstract class Tile extends GameObject {
         super(filename, posX, posY);
         this.isMoveable = isMoveable;
     }
+
+    public boolean checkMovable() {
+        if (isMoveable == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

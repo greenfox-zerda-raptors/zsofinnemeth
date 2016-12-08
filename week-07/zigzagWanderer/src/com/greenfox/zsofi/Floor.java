@@ -7,5 +7,6 @@ public class Floor extends Tile {
     public Floor(int posX, int posY) {
     super("floor.png", posX, posY, true);
         this.isMoveable = true;
-}
+    }
+
 }
