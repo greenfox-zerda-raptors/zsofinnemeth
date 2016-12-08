@@ -10,4 +10,6 @@ public abstract class GameCharacter extends GameObject {
     public GameCharacter(String filename, int posX, int posY) {
         super(filename, posX, posY);
     }
+
+
 }

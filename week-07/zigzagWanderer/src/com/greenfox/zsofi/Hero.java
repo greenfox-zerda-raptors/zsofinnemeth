@@ -5,30 +5,37 @@ public class Hero extends GameCharacter {
 
     public Hero(String filename, int posX, int posY) {
         super(filename, posX, posY);
-        this.filename = "hero-down.png";
+        this.filename = filename;
         this.posX = posX;
         this.posY = posY;
 
     }
 
     public void moveRight() {
-        this.posX = posX+1;
+        if (posX < 7) {
+            this.posX = posX + 1;
+        }
     }
     public void moveLeft() {
-        this.posX = posX-1;
+        if (posX > 0) {
+            this.posX = posX - 1;
+        }
     }
     public void moveUp() {
-        this.posY = posY-1;
+        if (posY > 0) {
+            this.posY = posY - 1;
+        }
     }
     public void moveDown() {
-        this.posY = posY+1;
+        if (posY < 8) {
+            this.posY = posY + 1;
+        }
     }
 
     public void faceDirection(int i) {
         switch (i) {
             case 1: // move right
                 this.filename = "hero-right.png";
-                // this.setImage;
                 break;
             case 2: // move left
                 this.filename = "hero-left.png";

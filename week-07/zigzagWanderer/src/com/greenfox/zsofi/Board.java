@@ -33,6 +33,7 @@ public class Board extends JComponent implements KeyListener{
                 {false, false, true, true, false, true, false, false, true},
                 {false, false, true, true, false, true, false, false, false}
         };
+
         gameObjects = new ArrayList<>();
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[i].length; j++) {
@@ -43,6 +44,7 @@ public class Board extends JComponent implements KeyListener{
                 }
             }
         }
+
         hero = new Hero("hero-down.png", 0,0);
         gameObjects.add(hero);
         Skeleton skeletonOne = new Skeleton("skeleton.png", 5, 5);
@@ -56,7 +58,7 @@ public class Board extends JComponent implements KeyListener{
         addKeyListener(this);
 
         // set the size of your draw board
-        setPreferredSize(new Dimension(720, 720));
+        setPreferredSize(new Dimension(700, 950));
         setVisible(true);
         setFocusable(true);
     }
@@ -71,6 +73,9 @@ public class Board extends JComponent implements KeyListener{
         }
     }
 
+
+        // KEY LISTENERS
+
     @Override
     public void keyTyped(KeyEvent e) {
     }
@@ -78,8 +83,10 @@ public class Board extends JComponent implements KeyListener{
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode()==KeyEvent.VK_RIGHT) {
+            hero.faceDirection(1);
             hero.moveRight();
             repaint();
+
         }
         if (e.getKeyCode()==KeyEvent.VK_LEFT) {
             hero.moveLeft();

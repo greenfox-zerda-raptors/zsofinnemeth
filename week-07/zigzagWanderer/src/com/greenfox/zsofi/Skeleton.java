@@ -11,4 +11,5 @@ public class Skeleton extends GameCharacter {
         this.posX = posX;
         this.posY = posY;
     }
+
 }
