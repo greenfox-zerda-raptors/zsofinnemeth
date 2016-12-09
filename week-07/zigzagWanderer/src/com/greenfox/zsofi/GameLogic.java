@@ -36,8 +36,7 @@ public class GameLogic {
 
     }
 
-
-    public static void isDead() {
+    public void getDead() {
 
     }
 
