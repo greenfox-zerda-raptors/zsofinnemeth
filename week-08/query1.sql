@@ -83,3 +83,31 @@ order by m.title
 that is, the difference between highest and lowest ratings given to that movie. 
 Sort by rating spread from highest to lowest, then by movie title. */
 
+select title, max(stars)- min(stars)
+as spread from Movie, Rating 
+where Movie.mid = Rating.mid
+group by title
+order by spread desc
+;
+
+/* Q9 Find the difference between the average rating of movies released before 1980 
+and the average rating of movies released after 1980. alter
+(Make sure to calculate the average rating for each movie,
+ then the average of those averages for movies before 1980 and movies after. 
+ Don't just calculate the overall average rating before and after 1980.) */
+ 
+select abs(avg(avgrating2) - avg(avgrating1)) as difference
+from (
+select title, avg(stars) as avgrating1
+from rating r
+join movie m
+	on m.mid = r.mid
+where year < 1980
+group by title) as beforeeighties
+join (
+select title, avg(stars) as avgrating2
+from rating r
+join movie m
+	on m.mid = r.mid
+where year > 1980
+group by title) as aftereighties;
