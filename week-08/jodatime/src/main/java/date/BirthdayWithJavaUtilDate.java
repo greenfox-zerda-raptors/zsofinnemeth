@@ -1,5 +1,11 @@
 package date;
 
+import sun.java2d.pipe.SpanShapeRenderer;
+
+import java.text.FieldPosition;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -8,32 +14,40 @@ public final class BirthdayWithJavaUtilDate implements BirthdayCalculator<Date> 
     @Override
     public Date parseDate(String str) {
         // TODO - return with the parsed date; format is: yyyy-MM-dd
-        return null;
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = null;
+        try {
+            date= df.parse(str);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
     }
 
     @Override
     public String printMonthAndDay(Date date) {
         // TODO - return the date formatted: month & day (MM. dd.)
-        return null;
+        SimpleDateFormat df = new SimpleDateFormat("MM-dd");
+        return String.valueOf(date);
     }
 
-    @Override
-    public boolean isAnniversaryToday(Date date) {
-        // TODO - return with true if today is the same month+day as date
-        return false;
-    }
+        @Override
+        public boolean isAnniversaryToday(Date date) {
+            // TODO - return with true if today is the same month+day as date
+            return false;
+        }
 
-    @Override
-    public int calculateAgeInYears(Date birthday) {
-        // TODO - return how many years age the input date 'birthday' was
-        return -1;
-    }
+        @Override
+        public int calculateAgeInYears(Date birthday) {
+            // TODO - return how many years age the input date 'birthday' was
+            return -1;
+        }
 
-    @Override
-    public int calculateDaysToNextAnniversary(Date date) {
-        // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)
-        return -1;
-    }
+        @Override
+        public int calculateDaysToNextAnniversary(Date date) {
+            // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)
+            return -1;
+        }
 
     public static void main(String[] args) {
         new BirthdayWithJavaUtilDate().run();
