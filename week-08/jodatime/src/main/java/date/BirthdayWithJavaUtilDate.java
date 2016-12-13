@@ -27,8 +27,8 @@ public final class BirthdayWithJavaUtilDate implements BirthdayCalculator<Date> 
     @Override
     public String printMonthAndDay(Date date) {
         // TODO - return the date formatted: month & day (MM. dd.)
-        SimpleDateFormat df = new SimpleDateFormat("MM-dd");
-        return String.valueOf(date);
+        SimpleDateFormat df = new SimpleDateFormat("MM. dd.");
+        return df.format(date);
     }
 
         @Override
