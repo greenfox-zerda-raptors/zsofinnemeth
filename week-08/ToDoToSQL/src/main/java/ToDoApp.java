@@ -1,17 +1,21 @@
 /**
  * Created by false on 2016. 12. 16..
  */
+import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
+import com.j256.ormlite.table.TableUtils;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.*;
 
 public class ToDoApp extends JFrame {
+    String name;
     JMenuBar menuBar;
     JMenu menu;
     JMenuItem menuItem;
@@ -20,23 +24,29 @@ public class ToDoApp extends JFrame {
     JLabel labelWelcome, LabelMemory, labelInput;
     JScrollPane scrollPane;
     String input;
-
-
-    static ArrayList<ToDoItem> tdlist = new ArrayList<>();
+    Dao<ToDoItem, String> toDoDao;
+    java.util.List<ToDoItem> tdlist = new ArrayList<>();
 
     public static void main(String[] args) throws SQLException {
         String databaseUrl = "jdbc:mysql://127.0.0.1:3306/tasks?user=root&password=BA71367VZ6kQcz7p&useSSL=false";
         ConnectionSource connectionSource = new JdbcConnectionSource(databaseUrl);
 
+        TableUtils.createTableIfNotExists(connectionSource, ToDoItem.class);
+
+        Dao<ToDoItem, String> toDoDao = DaoManager.createDao(connectionSource, ToDoItem.class);
+
+
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new ToDoApp().setVisible(true);
+                new ToDoApp(toDoDao).setVisible(true);
             }
         });
     }
 
-    public ToDoApp() throws HeadlessException {
+    public ToDoApp(Dao<ToDoItem, String> toDoDao) throws HeadlessException {
+        this.toDoDao = toDoDao;
+
         setTitle("TO DO APP");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Toolkit tk = Toolkit.getDefaultToolkit();
@@ -62,25 +72,11 @@ public class ToDoApp extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 reloadItems();
+
             }
         });
         menuBar.add(menu);
         menu = new JMenu("Save to-dos");
-        menu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                saveItems();
-            }
-        });
-
-        menuBar.add(menu);
-        menu = new JMenu("Remove to-do");
-        menu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
         menuBar.add(menu);
         menu = new JMenu("I'm tired of this");
         menuBar.add(menu);
@@ -119,15 +115,18 @@ public class ToDoApp extends JFrame {
                 tdlist.add(item);
                 listItems();
                 textField.setText("");
+                try {
+                    toDoDao.create(item);
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
         panel.add(textField);
-
-
-
     }
 
     // ------------ METHODS ------------
+
 
     public void listItems() {
         textArea.setText(" ");
@@ -137,43 +136,11 @@ public class ToDoApp extends JFrame {
     }
 
     public void reloadItems() {
-        tdlist.clear();
-        BufferedReader br = null;
+          tdlist.clear();
         try {
-            br = new BufferedReader(new FileReader("FILL ME PLEASE WITH THE SQL TABLE FILENAME"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            tdlist = toDoDao.queryForAll();
+        } catch (SQLException e1) {
+            e1.printStackTrace();
         }
-        try {
-            String line = br.readLine();
-            while (line != null) {
-                // reading the next line
-                ToDoItem bufftditem = new ToDoItem(line);
-                tdlist.add(bufftditem);
-                line = br.readLine();
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    public void saveItems() {
-        BufferedWriter bw = null;
-        try {
-            bw = new BufferedWriter(new FileWriter("FILL ME PLEASE WITH THE SQL TABLE FILENAME"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            for (int i=0; i<tdlist.size(); i++) {
-                bw.write(tdlist.get(i).toString());
-                bw.newLine();
-            }
-            bw.flush();
-            bw.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
     }
 }
