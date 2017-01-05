@@ -3,6 +3,7 @@ package com.greenfoxacademy.controllers;
 import com.greenfoxacademy.domain.Post;
 import com.greenfoxacademy.domain.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,10 +19,25 @@ public class PostController {
     @Autowired
     private PostRepository repository;
 
+
+    @RequestMapping(value="/", method = RequestMethod.GET)
+    public String index(Model model) {
+        model.addAttribute("posts", repository.findAll(new Sort(Sort.Direction.DESC,"score")));
+        return "posts/list";
+    }
+
     @RequestMapping(value="", method=RequestMethod.GET)
     public String listPosts(Model model) {
         model.addAttribute("posts", repository.findAll());
         return "posts/list";
+    }
+
+    @RequestMapping(value="/vote/{vote}/{id}", method = RequestMethod.GET)
+    public ModelAndView vote(@PathVariable int vote, @PathVariable long id) {
+        Post post = repository.findOne(id);
+        post.setScore(post.getScore()+ vote);
+        repository.save(post);
+        return new ModelAndView("redirect:/posts");
     }
 
     @RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)

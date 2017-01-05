@@ -5,17 +5,27 @@
     <a class="btn btn-primary" href="/posts/new">Add new post</a>
 
     <table class="table table-striped" id="posts_list">
-        <h1>POPULAR POSTS</h1>
+        <h1></h1>
         <thead>
         <tr>
-            <th>Title</th>
-            <th>Action</th>
+            <th>Most popular</th>
+            <th>Score</th>
             <th></th>
+            <th>Title</th>
+
         </tr>
         </thead>
         <tbody>
         <tr data-th-each="post : ${posts}">
+
+            <td class="message" data-th-text="${post.id}"></td>
+            <td class="message" data-th-text="${post.score}"></td>
+            <td>
+                <a th:href="@{'/posts/vote/1/'+${post.id}}" th:text="'+'"></a>
+                <a th:href="@{'/posts/vote/-1/'+${post.id}}" th:text="'-'"></a>
+            </td>
             <td class="message" data-th-text="${post.message}"></td>
+
 
             <td>
                 <a th:href="@{'/posts/{id}/delete'(id=${post.id})}" class="delete" th:attr="name=${post.message}">
