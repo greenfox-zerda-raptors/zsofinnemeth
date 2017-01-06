@@ -19,16 +19,9 @@ public class PostController {
     @Autowired
     private PostRepository repository;
 
-
-    @RequestMapping(value="/", method = RequestMethod.GET)
-    public String index(Model model) {
-        model.addAttribute("posts", repository.findAll(new Sort(Sort.Direction.DESC,"score")));
-        return "posts/list";
-    }
-
     @RequestMapping(value="", method=RequestMethod.GET)
     public String listPosts(Model model) {
-        model.addAttribute("posts", repository.findAll());
+        model.addAttribute("posts", repository.findAll(new Sort(Sort.Direction.DESC, "score")));
         return "posts/list";
     }
 
@@ -53,7 +46,7 @@ public class PostController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ModelAndView create(@RequestParam("message") String comment) {
-    repository.save(new Post(comment));
+        repository.save(new Post(comment));
         return new ModelAndView("redirect:/posts");
     }
 
@@ -68,9 +61,8 @@ public class PostController {
 
     @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
     public String edit(@PathVariable long id, Model model) {
-    Post post = repository.findOne(id);
+        Post post = repository.findOne(id);
         model.addAttribute("post", post);
         return "posts/edit";
     }
 }
-

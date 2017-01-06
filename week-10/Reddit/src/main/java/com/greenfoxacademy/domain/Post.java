@@ -24,7 +24,7 @@ public class Post {
     private int score;
 
     public Post(String message) {
-        this.score = score;
+
         this.message = message;
     }
 
