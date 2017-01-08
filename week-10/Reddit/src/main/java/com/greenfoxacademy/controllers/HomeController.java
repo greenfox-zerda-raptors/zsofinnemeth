@@ -10,6 +10,7 @@ public class HomeController {
     @RequestMapping("/")
     @ResponseBody
     public String helloIndex() {
+        System.out.println("now i wanna sniff some glue");
         return "Hello World!";
     }
 }
