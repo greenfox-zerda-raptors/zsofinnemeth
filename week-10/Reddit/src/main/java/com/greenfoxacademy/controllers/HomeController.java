@@ -11,6 +11,7 @@ public class HomeController {
     @ResponseBody
     public String helloIndex() {
         System.out.println("now i wanna sniff some glue");
-        return "Hello World!";
+	String s = "Hello World";
+        return s;
     }
 }
