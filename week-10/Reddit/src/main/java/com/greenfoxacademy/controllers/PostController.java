@@ -1,7 +1,8 @@
 package com.greenfoxacademy.controllers;
 
 import com.greenfoxacademy.domain.Post;
-import com.greenfoxacademy.domain.PostRepository;
+import com.greenfoxacademy.repository.PostRepository;
+import com.greenfoxacademy.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
@@ -16,26 +17,29 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/posts")
 public class PostController {
 
-    @Autowired
-    private PostRepository repository;
+    //@Autowired
+    private PostService postService;
+
+    public PostController() {
+        //postService = new PostService();
+        postService = PostService.getInstance();
+    }
 
     @RequestMapping(value="", method=RequestMethod.GET)
     public String listPosts(Model model) {
-        model.addAttribute("posts", repository.findAll(new Sort(Sort.Direction.DESC, "score")));
+        model.addAttribute("posts", postService.getPostsOrderedByScore());
         return "posts/list";
     }
 
     @RequestMapping(value="/vote/{vote}/{id}", method = RequestMethod.GET)
     public ModelAndView vote(@PathVariable int vote, @PathVariable long id) {
-        Post post = repository.findOne(id);
-        post.setScore(post.getScore()+ vote);
-        repository.save(post);
+        postService.vote(vote, id);
         return new ModelAndView("redirect:/posts");
     }
 
     @RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
     public ModelAndView delete(@PathVariable long id) {
-        repository.delete(id);
+        postService.deletePost(id);
         return new ModelAndView("redirect:/posts");
     }
 
@@ -46,23 +50,20 @@ public class PostController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ModelAndView create(@RequestParam("message") String comment) {
-        repository.save(new Post(comment));
+        postService.createNewPost(comment);
         return new ModelAndView("redirect:/posts");
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public ModelAndView update(@RequestParam("post_id") Long id,
                                @RequestParam("message") String message) {
-        Post post = repository.findOne(id);
-        post.setMessage(message);
-        repository.save(post);
+        postService.updatePost(id, message);
         return new ModelAndView("redirect:/posts");
     }
 
     @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
     public String edit(@PathVariable long id, Model model) {
-        Post post = repository.findOne(id);
-        model.addAttribute("post", post);
+        model.addAttribute("post", postService.findOne(id));
         return "posts/edit";
     }
 }

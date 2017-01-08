@@ -1,6 +1,7 @@
-package com.greenfoxacademy.domain;
+package com.greenfoxacademy.repository;
 
 
+import com.greenfoxacademy.domain.Post;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.CrudRepository;
 

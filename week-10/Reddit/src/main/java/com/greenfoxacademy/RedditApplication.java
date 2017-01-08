@@ -1,7 +1,7 @@
 package com.greenfoxacademy;
 
 import com.greenfoxacademy.domain.Post;
-import com.greenfoxacademy.domain.PostRepository;
+import com.greenfoxacademy.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
