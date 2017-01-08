@@ -12,19 +12,22 @@ public class BirthdayWithJodaTime implements BirthdayCalculator<LocalDate> {
     @Override
     public LocalDate parseDate(String str) {
         // TODO - return with the parsed date; format is: yyyy-MM-dd
-        return null;
+//        DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
+//        DateTime date = formatter.parseDateTime(str);
+        LocalDate date = new LocalDate(str);
+        return date;
+
     }
 
     @Override
     public String printMonthAndDay(LocalDate date) {
         // TODO - return the date formatted: month & day (MM. dd.)
-        return null;
+        return date.toString("MM. dd");
     }
 
     @Override
     public boolean isAnniversaryToday(LocalDate date) {
-        // TODO - return with true if today is the same month+day as date
-        return false;
+        return printMonthAndDay(date).equals(printMonthAndDay(LocalDate.now()));
     }
 
     @Override

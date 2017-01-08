@@ -26,7 +26,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-03/idea/src/Workshop21.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/.idea/workspace.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/week-04.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/day-1/Car.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../week-02/day-4/hoverplus.html" afterPath="$PROJECT_DIR$/../../week-02/day-4/hoverplus.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../week-02/project-wiki/wikipedija.css" afterPath="$PROJECT_DIR$/../../week-02/project-wiki/wikipedija.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../week-02/project-wiki/wikipedija.html" afterPath="$PROJECT_DIR$/../../week-02/project-wiki/wikipedija.html" />
@@ -35,8 +34,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../week-04/day-1-2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../week-04/day-1-2/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../week-04/day-1-2/src/Workshop02.java" afterPath="$PROJECT_DIR$/../../week-04/day-1-2/src/Workshop02.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../week-04/day-3/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../week-04/day-3/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Car.java" afterPath="$PROJECT_DIR$/src/Car.java" />
     </list>
     <ignored path="day-1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -667,12 +664,12 @@
       <updated>1479117986853</updated>
       <workItem from="1479117990764" duration="18015000" />
       <workItem from="1479161573050" duration="505000" />
-      <workItem from="1479198992290" duration="23000" />
+      <workItem from="1479198992290" duration="647000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18543000" />
+    <option name="totallyTimeSpent" value="19167000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />

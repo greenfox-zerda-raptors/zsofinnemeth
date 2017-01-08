@@ -11,7 +11,8 @@ public class GameCharacter extends GameObject {
     protected int SP; // strike point
     protected int DP; // defense point
     protected boolean isDead;
-    private boolean[][] map;
+
+
 
     public GameCharacter(String filename, int posX, int posY) {
 

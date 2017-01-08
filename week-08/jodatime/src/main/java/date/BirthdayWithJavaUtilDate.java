@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
-public final class BirthdayWithJavaUtilDate implements BirthdayCalculator<Date> {
+public class BirthdayWithJavaUtilDate implements BirthdayCalculator<Date> {
 
     @Override
     public Date parseDate(String str) {

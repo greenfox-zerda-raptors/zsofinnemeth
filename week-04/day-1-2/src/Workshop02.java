@@ -1,7 +1,7 @@
 /**
  * Created by false on 2016. 11. 08..
  */
-import java.util.*;
+// import java.util.*;
 
 public class Workshop02{
     public static void main(String... args){

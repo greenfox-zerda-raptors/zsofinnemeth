@@ -26,7 +26,7 @@ public class GameLogic {
 
         return true;
     }
-
+    //TODO tradtradtrdaaa  lent van ilyen TODO-kat megjegyző
     public void attack() {
         ArrayList<Enemy> enemies = new ArrayList<>();
         enemies.add(skeletonOne);

@@ -28,11 +28,7 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	//runtime('org.springframework.boot:spring-boot-devtools')
-	compile("org.springframework.boot:spring-boot-devtools")
+	runtime('org.springframework.boot:spring-boot-devtools')
 	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
-	compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '1.4.1.RELEASE'
-
 }

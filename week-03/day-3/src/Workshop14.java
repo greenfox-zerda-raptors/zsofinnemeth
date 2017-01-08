@@ -8,7 +8,7 @@ public class Workshop14{
         // Reverse the order of ah
         int[] ah = new int[]  { 3, 4, 5, 6, 7 };
 
-        for(int i=ah.length; i>0;i--){
+        for(int i=ah.length; i>-1;i--){
             System.out.print(ah[i-1]);
         }
 

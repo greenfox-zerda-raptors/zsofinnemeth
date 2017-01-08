@@ -9,7 +9,9 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Controller
 public class HelloWebController {
-    AtomicLong nextID = new AtomicLong(1);
+
+    AtomicLong nextID = new AtomicLong(999);
+
     @RequestMapping("/web/greeting")
     public String greeting(Model model) {
         model.addAttribute("name", " World");

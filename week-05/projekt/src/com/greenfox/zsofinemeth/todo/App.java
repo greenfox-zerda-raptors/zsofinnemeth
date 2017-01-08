@@ -8,6 +8,7 @@ public class App {
 
     public static void main(String[] args) {
         try {
+
             ToDoList.displayWelcome();
         } catch (InputMismatchException e) {
             System.out.println("Sorry, invalid value");

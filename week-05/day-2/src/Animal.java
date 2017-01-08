@@ -7,6 +7,7 @@ public class Animal {
     boolean isCarnivore;
     boolean hasTail;
 
+
     public Animal(int i, boolean b) {
         System.out.println("Animal is created.");
         lifeExpectancy = 10;

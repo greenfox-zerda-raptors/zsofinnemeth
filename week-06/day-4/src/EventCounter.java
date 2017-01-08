@@ -26,7 +26,7 @@ public class EventCounter extends JFrame {
         setTitle("Basic Example Application");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
-        setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
         setResizable(false);
         setSize(450, 200);
         addWindowListener(new WindowListener() {

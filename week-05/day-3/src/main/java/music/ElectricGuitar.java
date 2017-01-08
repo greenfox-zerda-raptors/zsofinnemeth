@@ -1,23 +1,30 @@
+
 package main.java.music;
 
 /**
  * Created by false on 2016. 11. 16..
  */
 public class ElectricGuitar extends StringedInstrument {
-        int numberOfStrings;
+ private static final String instrumentName = "Electric guitar";
 
     public ElectricGuitar() {
-    this(6);
-
+        super(instrumentName, 6);
     }
-
-
     public ElectricGuitar(int numberOfStrings) {
-
-        this.numberOfStrings = numberOfStrings;
+        super(instrumentName, numberOfStrings);
     }
-
+    @Override
     public void play() {
-        System.out.println("Electric Guitar, a " + numberOfStrings + "-stringed instrument that twangs.");
+        System.out.printf(formatForPlay, name, numberOfStrings, sound());
+        // it's okay to add the sound of the instrument to the print but you can make a method for it, or a field
     }
+    @Override
+    public String sound() {
+        return "twang";
+    }
+
+    public String smash() {
+        return "tsssssssss....";
+    }
+
 }

@@ -6,7 +6,7 @@ public interface BirthdayCalculator<T> {
 
     String printMonthAndDay(T date);
 
-    boolean isAnniversaryToday(T date);
+    void isAnniversaryToday(T date);
 
     int calculateAgeInYears(T birthday);
 

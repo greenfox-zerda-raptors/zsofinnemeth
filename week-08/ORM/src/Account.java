@@ -8,8 +8,8 @@ import com.j256.ormlite.table.DatabaseTable;
 
 public class Account {
     @DatabaseField(id = true)
-
     String name;
+
     @DatabaseField(canBeNull = false)
     String password;
 
@@ -37,4 +37,9 @@ public class Account {
         this.password = password;
     }
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "name='" + name + '\'' +'}';
+    }
 }

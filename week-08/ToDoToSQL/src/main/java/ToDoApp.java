@@ -46,7 +46,6 @@ public class ToDoApp extends JFrame {
 
     public ToDoApp(Dao<ToDoItem, String> toDoDao) throws HeadlessException {
         this.toDoDao = toDoDao;
-
         setTitle("TO DO APP");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Toolkit tk = Toolkit.getDefaultToolkit();

@@ -54,6 +54,7 @@ public class ToDoList  {
                     list.removeItem();
                     break;
                 case "q":
+                    System.out.println("Bye Bye");
                     flLoop = false;
             }
         }
@@ -74,7 +75,6 @@ public class ToDoList  {
 
     public void listItems() {
         for (int i = 0; i < tdlist.size(); i++) {
-//            System.out.println(i + 1 + " - " + tdlist.get(i));
             System.out.println(i + 1 + " - " + tdlist.get(i).toString());
         }
     }

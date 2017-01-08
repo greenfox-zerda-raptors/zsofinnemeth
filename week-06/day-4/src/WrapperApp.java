@@ -24,10 +24,11 @@ public class WrapperApp extends JFrame {
         Dimension dim = tk.getScreenSize();
         int xPos = (dim.width / 2) - (this.getWidth() / 2);
         int yPos = (dim.height / 2) - (this.getHeight() / 2);
-        this.setLocation(xPos, yPos);
-        this.setLocationRelativeTo(null);
+        setLocation(xPos, yPos);
+        setLocationRelativeTo(null);
         setResizable(false);
         setSize(500, 500);
+        setVisible(true);
 
 
         JPanel panel = new JPanel();
@@ -43,12 +44,9 @@ public class WrapperApp extends JFrame {
                 "The only menu in this program that has menu items");
         menuBar.add(menu);
 
-        //a group of JMenuItems
+        //JMenuItems
 
-        menuItem = new JMenuItem(new ImageIcon("507.png"));
-        menuItem.setMnemonic(KeyEvent.VK_S);
-        menu.add(menuItem);
-        menuItem = new JMenuItem("Exit", KeyEvent.VK_S);
+        menuItem = new JMenuItem("Exit", KeyEvent.VK_X);
         menuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -57,9 +55,9 @@ public class WrapperApp extends JFrame {
         });
         menu.add(menuItem);
 
+
         setJMenuBar(menuBar);
 
-        this.setJMenuBar(menuBar);
-        this.setVisible(true);
+
     }
 }

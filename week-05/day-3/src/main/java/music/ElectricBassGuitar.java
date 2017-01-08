@@ -4,18 +4,24 @@ package main.java.music;
  * Created by false on 2016. 11. 16..
  */
 public class ElectricBassGuitar extends StringedInstrument {
-    int numberOfStrings = 4;
-
+    private static final String instrumentName = "Electric bass guitar";
+    // constructor:
     public ElectricBassGuitar() {
-        this(4);
-
+        super("electric bass guitar", 4);
     }
-
     public ElectricBassGuitar(int numberOfStrings) {
+        super(instrumentName, numberOfStrings);
+    }
 
-        this.numberOfStrings = numberOfStrings;
-    }
+    //methods:
+    @Override
     public void play() {
-        System.out.println("Bass Guitar, a " + numberOfStrings + "-stringed instrument that Duum-duum-duum.");
+        System.out.printf(formatForPlay, name, numberOfStrings, sound());
+        // it's okay to add the sound of the instrument to the print but you can make a method for it, or a field
     }
+    @Override
+    public String sound() {
+        return "dumm dummmmm dummm";
+    }
+
 }
