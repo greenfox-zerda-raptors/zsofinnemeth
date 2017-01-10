@@ -17,13 +17,14 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/posts")
 public class PostController {
 
-    //@Autowired
+
+    @Autowired
     private PostService postService;
 
-    public PostController() {
-        //postService = new PostService();
-        postService = PostService.getInstance();
-    }
+//    public PostController() {
+//        //postService = new PostService();
+//        postService = PostService.getInstance();
+//    }
 
     @RequestMapping(value="", method=RequestMethod.GET)
     public String listPosts(Model model) {
