@@ -1,0 +1,33 @@
+<html layout:decorator="layout" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div layout:fragment="content">
+
+    <a class="btn btn-primary" href="/posts/favourites">My favorites</a>
+
+    <table class="table table-striped" id="articles_list">
+        <h1></h1>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th></th>
+            <th></th>
+            <th>Date added</th>
+            <th></th>
+            <th>Your favorite?</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-th-each="article : ${articles}">
+
+            <td class="message" data-th-text="${article.id}"></td>
+            <td class="message" data-th-text="${article.title}"></td>
+            <td class="message" data-th-text="${article.content}"></td>
+            <!--<td class="message" data-th-text="${article.markAsFavorite()}">Star.png</td>-->
+
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</html>
