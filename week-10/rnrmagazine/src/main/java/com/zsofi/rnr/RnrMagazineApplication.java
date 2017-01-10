@@ -24,7 +24,7 @@ public class RnrMagazineApplication implements CommandLineRunner {
 		repository.save(new Article("COMING SOON! Brian Wilson anniversay mental breakdown"));
 		repository.save(new Article("Chris Morris. Chris FUCKING Morris - says John Cleese"));
 		repository.save(new Article("PJ Harvey again on potato diet"));
-		repository.save(new Article("Terrible documentary having terrific opportunities as mockumentary in filmmaking"));
+		repository.save(new Article("Terrible documentary with terrific prospects as mockumentary"));
 		repository.save(new Article("New film from Werner Herzog about the wildly controversial reality within the framework of all commonly known conspiracy theories"));
 	}
 }
