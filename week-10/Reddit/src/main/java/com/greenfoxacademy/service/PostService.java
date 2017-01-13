@@ -6,19 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Component
 public class PostService {
-
-
-//    private static PostService instance;
-//    public static PostService getInstance() {
-//        if (instance == null) {
-//            instance = new PostService();
-//        }
-//        return instance;
-//    }
 
     @Autowired
     private PostRepository repository;
@@ -40,7 +32,7 @@ public class PostService {
         repository.delete(id);
     }
 
-    public void createNewPost(String comment) {
+    public void createNewPost(@Valid String comment) {
         repository.save(new Post(comment));
     }
 

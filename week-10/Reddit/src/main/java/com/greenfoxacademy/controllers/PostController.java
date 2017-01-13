@@ -4,14 +4,15 @@ import com.greenfoxacademy.domain.Post;
 import com.greenfoxacademy.repository.PostRepository;
 import com.greenfoxacademy.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ErrorController;
+import org.springframework.boot.autoconfigure.web.WebMvcProperties;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/posts")
@@ -21,10 +22,6 @@ public class PostController {
     @Autowired
     private PostService postService;
 
-//    public PostController() {
-//        //postService = new PostService();
-//        postService = PostService.getInstance();
-//    }
 
     @RequestMapping(value="", method=RequestMethod.GET)
     public String listPosts(Model model) {
@@ -50,7 +47,7 @@ public class PostController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public ModelAndView create(@RequestParam("message") String comment) {
+    public ModelAndView create(@RequestParam("message") @Valid String comment) {
         postService.createNewPost(comment);
         return new ModelAndView("redirect:/posts");
     }
