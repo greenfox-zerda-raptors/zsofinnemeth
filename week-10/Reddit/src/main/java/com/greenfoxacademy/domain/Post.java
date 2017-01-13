@@ -23,11 +23,14 @@ public class Post {
     private long id;
     @NotEmpty
     private String message;
+    @NotEmpty
+    private String content;
     private int score;
 
-    public Post(String message) {
+    public Post(String message, String content) {
 
         this.message = message;
+        this.content = content;
     }
 
 }

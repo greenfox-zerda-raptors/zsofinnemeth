@@ -47,15 +47,17 @@ public class PostController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public ModelAndView create(@RequestParam("message") @Valid String comment) {
-        postService.createNewPost(comment);
+    public ModelAndView create(Post post, @RequestParam("message") String message,
+                               @RequestParam("content") String content) {
+        postService.createNewPost(message, content);
         return new ModelAndView("redirect:/posts");
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public ModelAndView update(@RequestParam("post_id") Long id,
-                               @RequestParam("message") String message) {
-        postService.updatePost(id, message);
+                               @RequestParam("message") String message,
+                               @RequestParam("content") String content) {
+        postService.updatePost(id, message, content);
         return new ModelAndView("redirect:/posts");
     }
 

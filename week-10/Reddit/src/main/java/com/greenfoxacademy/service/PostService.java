@@ -32,13 +32,14 @@ public class PostService {
         repository.delete(id);
     }
 
-    public void createNewPost(@Valid String comment) {
-        repository.save(new Post(comment));
+    public void createNewPost(@Valid String message, @Valid String content) {
+        repository.save(new Post(message, content));
     }
 
-    public void updatePost(Long id, String message) {
+    public void updatePost(Long id, String message, String content) {
         Post post = repository.findOne(id);
         post.setMessage(message);
+        post.setContent(content);
         repository.save(post);
     }
 
