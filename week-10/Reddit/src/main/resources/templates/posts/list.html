@@ -12,6 +12,8 @@
             <th>Score</th>
             <th></th>
             <th>Title</th>
+            <th>Content</th>
+            <th></th>
 
         </tr>
         </thead>
@@ -25,6 +27,7 @@
                 <a th:href="@{'/posts/vote/-1/'+${post.id}}" th:text="'-'"></a>
             </td>
             <td class="message" data-th-text="${post.message}"></td>
+            <td class="content" data-th-text="${post.content}"></td>
 
 
             <td>
