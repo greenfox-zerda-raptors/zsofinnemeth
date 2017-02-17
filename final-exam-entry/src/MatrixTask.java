@@ -21,9 +21,9 @@ public class MatrixTask {
         for (int i = 0; i < l; i++) {
             String out = stringZero;
             for (int j = 0; j < l; j++){
-                if (j == l)
+                if (j == i)
                 {
-                    out += stringOne;
+                    out = out + stringOne;
 
                 }
                 else
