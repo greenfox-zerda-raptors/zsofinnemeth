@@ -22,9 +22,18 @@ public class MatrixTask {
         for (int i = 0; i < l; i++) {
             String out = stringZero;
             for (int j = 0; j < l; j++){
-                out += stringZero;
+                if (j == l)
+                {
+                 out += stringOne;
+
+                }
+                else
+                {
+                 out += stringZero;
+                }
             }
             System.out.println(out);
         }
+
     }
 }
