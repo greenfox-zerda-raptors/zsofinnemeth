@@ -21,18 +21,12 @@ public class MatrixTask {
         int l = 4;
         for (int i = 0; i < l; i++) {
             String out = stringZero;
-            for (int j = 0; j < l; j++){
-                if (j == l)
-                {
-                 out += stringOne;
-
+            for (int j = 0; j < l; j++) {
+                if (j == l) {
+                    out += stringOne;
                 }
-                else
-                {
-                 out += stringZero;
-                }
+                System.out.println(out);
             }
-            System.out.println(out);
         }
 
     }
