@@ -12,7 +12,6 @@
 //        0 0 0 1 0
 //        0 0 0 0 1
 
-
 public class MatrixTask {
 
     public static void main(String[] args) {
@@ -21,12 +20,18 @@ public class MatrixTask {
         int l = 4;
         for (int i = 0; i < l; i++) {
             String out = stringZero;
-            for (int j = 0; j < l; j++) {
-                if (j == l) {
+            for (int j = 0; j < l; j++){
+                if (j == l)
+                {
                     out += stringOne;
+
                 }
-                System.out.println(out);
+                else
+                {
+                    out += stringZero;
+                }
             }
+            System.out.println(out);
         }
 
     }
